@@ -9,7 +9,6 @@ def tomail(message):
     username = "vakilitestmail@gmail.com"
     #password = "dfr jrxeomykkolvyzoa sdf"  #NOTE: not secure! so store it in environment variable!
     password = os.getenv("PASSW")
-    #password = "vbhpaxoqomurodrze"
 
     receiver = "hamidgml@gmail.com"
     context = ssl.create_default_context()
