@@ -1,15 +1,18 @@
 import requests
-
+from send_email import send_mail
 api_key = "cf8258fee30549c383985b1fde5f45c3"
 url = ("https://newsapi.org/v2/everything?q=tesla&"
        "from=2024-04-30&sortBy=publishedAt&apiKey="
        "cf8258fee30549c383985b1fde5f45c3")
 requests = requests.get(url)
 #content = requests.text
-#print(type(content))
 content = requests.json()
-#print(content["articles"])
 
+body = ""
 for article in content["articles"]:
-    print(article["title"])
-    print(article["description"])
+    title = article["title"] if article["title"] is not None else ""
+    description = article["description"] if article["description"] is not None else ""
+
+    body = body + title + "\n" + description + "\n\n"
+#print(body)
+send_mail(message=body)
