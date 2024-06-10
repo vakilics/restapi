@@ -10,8 +10,7 @@ app = Flask("Website")
 
 @app.route("/home")
 def muhome():
-    return render_template("weather-api.html")
-
+    return render_template("tutorial.html")
 
 @app.route("/about/")
 def about():
