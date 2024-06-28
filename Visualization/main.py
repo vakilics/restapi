@@ -9,7 +9,7 @@ app = Flask("Website")
 # http://127.0.0.1:5000/home
 
 @app.route("/home")
-def muhome():
+def myhome():
     return render_template("tutorial.html")
 
 @app.route("/about/")
